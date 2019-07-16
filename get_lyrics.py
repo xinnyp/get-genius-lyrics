@@ -1,11 +1,10 @@
 import requests
-import config
 import sys
 from bs4 import BeautifulSoup
 
 def request_song_info(song_title, artist_name):
     base_url = 'https://api.genius.com'
-    headers = {'Authorization': 'Bearer ' + config.token}
+    headers = {'Authorization': 'Bearer ' + TOKEN}
     search_url = base_url + '/search'
     data = {'q': song_title + ' ' + artist_name}
     response = requests.get(search_url, data=data, headers=headers)
